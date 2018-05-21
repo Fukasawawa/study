@@ -1,5 +1,5 @@
 import numpy as np
-
+'''
 list = np.array([['aaaaa', 100, '朝', '春'],
         ['bbbbb', 100, '朝', '夏'],
         ['ccccc', 500, '昼', '春'],
@@ -19,7 +19,33 @@ if(np.any(list==add[0]) == False):
     #データ追加
     list = np.insert(list, 0, add, axis=0)
 print(list)
+'''
 
+#list = np.array([])
+list = np.array([['あんこ', 'aaaa', 'aaaa', 'aaa']])
+list = np.insert(list, 1, ['1asf', '5', '3', 'A'], axis=0)
+list = np.insert(list, 1, ['あんこ', '35', '6','ASD'], axis=0)
+add = ['aaa', 'かｓ', 'わか', 'ああ']
+list = np.insert(list, 1, add, axis=0)
+print(np.delete(list, 0, 0))
+
+'''
+list = [["aaa", "aaa", "aaa", "aaa"]]
+add = ["bbb", "bbb", "bbb"]
+add.append("bbb")
+list.append(add)
+if((list in ["aaa"]) == True):
+    print(list)
+else:
+    print("zannnenn")
+'''
+
+'''
+day = '2018年5月12日 20:01'
+a = day.split('年')[1].split('月')[0]#.split('日').split(' ').split(':')
+b = day.split(' ')[1].split(':')[0]
+print(a, b, int(a)+int(b))
+'''
 
 '''
 print(list)

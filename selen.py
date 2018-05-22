@@ -74,10 +74,12 @@ def tweet_get(location):
         # BeautifulSoupで扱えるようにパース
         soup = BeautifulSoup(html, "html.parser")
 
+        #htmlからタグ抽出
         text = soup.select('.text')
         timestamp = soup.select('.timestamp')
-        
-        
+
+
+        #配列にデータ追加
         for j in range(len(text)):
             #テキスト
             add = [format.format_text(rm_emoji.remove_emoji(text[j].get_text().translate(non_bmp_map)))]
@@ -85,39 +87,45 @@ def tweet_get(location):
             add.append(soup.select('option')[i].get_text())
             #時間代入
             time = timestamp[j].select('span')[0].get_text()
-            
-            month = time.split('年')[1].split('月')[0]
-            if((int(month) >= 12) or (int(month) <= 2)):
+
+            #月を抽出
+            month = int(time.split('年')[1].split('月')[0])
+            if((month >= 12) or (month <= 2)):
                 season = '冬'
-            elif(int(month) >= 9):
+            elif(month >= 9):
                 season = '秋'
-            elif(int(month) >= 6):
+            elif(month >= 6):
                 season = '夏'
             else:
                 season = '春'
             #季節設定
             add.append(season)
-            
-            hour = time.split(' ')[1].split(':')[0]
-            if((int(hour) >= 18) or (int(hour) <= 3)):
+
+            #時間を抽出
+            hour = int(time.split(' ')[1].split(':')[0])
+            if((hour >= 18) or (hour <= 3)):
                 tzone = '夜'
-            elif(int(hour) >= 12):
+            elif(hour >= 12):
                 tzone = '昼'
             else:
                 tzone = '朝'
+
             #時間帯設定
             add.append(tzone)
             #print(add[0])
-            
+
+            #同じデータがなければデータ追加
+            #if((i == 0) and (j == 0)):
+            #    tweet = [add]
             if(np.any(tweet==add[0])== False):
                 #print(tweet)
                 tweet = np.insert(tweet, 1, add, axis=0)
-            
-    
+
+
     #ドライバー切断
     driver.quit()
     tweet = np.delete(tweet, 0, 0)
-    
+
     return tweet
 '''
 data = tweet_get("盛岡駅")
@@ -127,4 +135,4 @@ for i in data:
 '''
 
 t = tweet_get("盛岡駅")
-print(t[0])
+print(t)

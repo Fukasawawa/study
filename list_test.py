@@ -20,7 +20,7 @@ if(np.any(list==add[0]) == False):
     list = np.insert(list, 0, add, axis=0)
 print(list)
 '''
-
+'''
 #list = np.array([])
 list = np.array([['あんこ', 'aaaa', 'aaaa', 'aaa']])
 list = np.insert(list, 1, ['1asf', '5', '3', 'A'], axis=0)
@@ -28,7 +28,18 @@ list = np.insert(list, 1, ['あんこ', '35', '6','ASD'], axis=0)
 add = ['aaa', 'かｓ', 'わか', 'ああ']
 list = np.insert(list, 1, add, axis=0)
 print(np.delete(list, 0, 0))
-
+'''
+'''
+list = 'Tue May 22 05:54:15 +0000 2018'
+month = list.split(' ')[1]
+tuki = ['Jan', 'Feb', 'Mat', 'Apl', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+print(tuki.index(month)+1)
+hour = list.split(' ')[3].split(':')[0]
+print(int(hour))
+#month =
+'''
+list = np.array([[1, 1, 1]])
+print(list)
 '''
 list = [["aaa", "aaa", "aaa", "aaa"]]
 add = ["bbb", "bbb", "bbb"]

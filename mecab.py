@@ -4,7 +4,7 @@ import selen
 
 m = MeCab.Tagger('')
 t = selen.tweet_get("盛岡駅")
-for i in t:
+for i in t[:,0]:
     result = m.parse(i).split('\n')
     #print(result)
     for j in result:
@@ -17,6 +17,3 @@ for i in t:
                 print(i)
     #print(result)
     #print(result[0], result[4])
-    
-    
-    

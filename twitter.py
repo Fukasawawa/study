@@ -32,6 +32,7 @@ def tweet_search(word):
             #ツイート本文から絵文字を削除しMecabようにフォーマットしreturn
             add = [format.format_text(rm_emoji.remove_emoji(tweet['text'].translate(non_bmp_map))), '500m']
             date = tweet['created_at']
+            #print(add, date)
             month = tuki.index(date.split(' ')[1])+1
             if((month >= 12) or (month <= 2)):
                 season = '冬'
@@ -61,5 +62,5 @@ def tweet_search(word):
     else:
         print("ERROR: %d" % req.status_code)
 
-data = tweet_search("盛岡駅")
-print(data)
+#data = tweet_search("盛岡駅")
+#print(data)

@@ -127,12 +127,8 @@ def tweet_get(location):
     tweet = np.delete(tweet, 0, 0)
 
     return tweet
-'''
-data = tweet_get("盛岡駅")
-for i in data:
-    print(i)
 
 '''
-
 t = tweet_get("盛岡駅")
 print(t)
+'''

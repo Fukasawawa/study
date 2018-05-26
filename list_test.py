@@ -38,8 +38,13 @@ hour = list.split(' ')[3].split(':')[0]
 print(int(hour))
 #month =
 '''
-list = np.array([[1, 1, 1]])
-print(list)
+'''
+list = {'あんこ':0, 'いんこ':6, 'サンゴ':2}
+print(list['インコ'])
+'''
+list = [["aaa", "aaa", "aaa", "aaa"], ["sss","sss","sss","sss"]]
+a = [['jsd','asdf','asdf','adsf'],['kfd','oid','irk','oexs']]
+print(a+list)
 '''
 list = [["aaa", "aaa", "aaa", "aaa"]]
 add = ["bbb", "bbb", "bbb"]

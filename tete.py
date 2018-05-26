@@ -14,9 +14,9 @@ while a!="終わり":
         #print(len(word))
         if(len(word) >= 2):
             clazz = word[1].split(',')
-            #print(word[0], clazz[0], clazz[6])
+            print(word[0], clazz[0], clazz[6])
             #if((clazz[0] == "形容詞") or (clazz[0] == "連体詞") or (clazz[0] == "副詞")):
-            if((clazz[0] == "名詞") or (clazz[0] == "動詞")):
-                print(word[0], clazz[0], clazz[6])
-    
+            #if((clazz[0] == "名詞") or (clazz[0] == "動詞")):
+            #    print(word[0], clazz[0], clazz[6])
+
     #print(m.parse (a))
